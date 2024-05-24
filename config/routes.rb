@@ -6,5 +6,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
+  post 'api/test', to: 'application#test'
   # root "posts#index"
+
+  namespace :api, defaults: { format: :json } do
+    resources :users, only: :create
+    resource :session, only: [:show, :create, :destroy]
+  end
 end
