@@ -1,0 +1,16 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+  
+label {
+    margin: 5px 0;
+}
+  
+button {
+    margin-top: 10px;
+}
+  
+ul {
+    color: red;
+}
