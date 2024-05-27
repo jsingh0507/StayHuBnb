@@ -14,6 +14,19 @@ const removeUser = () => ({
   type: REMOVE_USER
 });
 
+export const storeCSRFToken = response => {
+    const csrfToken = response.headers.get("X-CSRF-Token");
+    if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
+};
+  
+export const restoreSession = () => async dispatch => {
+    const response = await csrfFetch("/api/session");
+    storeCSRFToken(response);
+    const data = await response.json();
+    dispatch(setUser(data.user));
+    return response;
+};
+
 // Thunk Action for logging in
 export const login = ({ email, password }) => async dispatch => {
   const response = await csrfFetch("/api/session", {
