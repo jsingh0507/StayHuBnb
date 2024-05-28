@@ -38,7 +38,7 @@ const LoginForm = () => {
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
         <label>
-          Username or Email
+          Email
           <input
             type="text"
             value={email}

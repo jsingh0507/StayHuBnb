@@ -32,8 +32,16 @@ function Navigation() {
   return (
     <nav className="navigation-bar">
         <div className="logo">
-            <NavLink to="/"><FaHome size={30} /></NavLink>
+            {/* <NavLink to="/"><FaHome size={30} /></NavLink> */}
+            <NavLink to="/">
+              <img
+                id="bnb-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" 
+                alt="Airbnb Logo"
+              />
+            </NavLink>
         </div>
+
         <div className="nav-links">
             {sessionLinks}
         </div>
