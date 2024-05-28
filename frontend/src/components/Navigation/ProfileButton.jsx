@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { FaUserCircle } from 'react-icons/fa';
+import { GiHamburgerMenu } from "react-icons/gi";
 import * as sessionActions from '../../store/session';
 
 function ProfileButton({ user }) {
@@ -35,6 +36,7 @@ function ProfileButton({ user }) {
   return (
     <div className="profile-button">
       <button onClick={toggleMenu}>
+        <GiHamburgerMenu size={30}/>
         <FaUserCircle size={30} />
       </button>
       {showMenu && (
