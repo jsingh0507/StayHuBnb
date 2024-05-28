@@ -9,7 +9,7 @@ function ProfileButton({ user }) {
   const dropdownRef = useRef(null);
   
   const toggleMenu = (e) => {
-    e.stopPropagation(); // Keep click from bubbling up to document and triggering closeMenu
+    e.stopPropagation(); 
     setShowMenu(!showMenu);
   };
   
@@ -33,9 +33,9 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <>
+    <div className="profile-button">
       <button onClick={toggleMenu}>
-        <FaUserCircle />
+        <FaUserCircle size={30} />
       </button>
       {showMenu && (
         <ul className="profile-dropdown" ref={dropdownRef}>
@@ -46,7 +46,7 @@ function ProfileButton({ user }) {
           </li>
         </ul>
       )}
-    </>
+    </div>
   );
 }
 
