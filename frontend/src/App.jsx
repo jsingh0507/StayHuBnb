@@ -9,18 +9,36 @@ import { useDispatch } from 'react-redux';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoginForm from './components/session/LoginForm';
 import SignupForm from './components/session/SignupForm';
+import Navigation from './components/Navigation/Navigation';
 import * as sessionActions from './store/session';
 
-const Layout = () => {
+// const Layout = () => {
+//   const dispatch = useDispatch();
+//   const [isLoaded, setIsLoaded] = useState(false);
+
+//   useEffect(() => {
+//     dispatch(sessionActions.restoreSession()).then(() => setIsLoaded(true));
+//   }, [dispatch]);
+
+//   return isLoaded ? <Outlet /> : null;
+// };
+function Layout() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    dispatch(sessionActions.restoreSession()).then(() => setIsLoaded(true));
+    dispatch(sessionActions.restoreSession()).then(() => {
+      setIsLoaded(true)
+    });
   }, [dispatch]);
 
-  return isLoaded ? <Outlet /> : null;
-};
+  return (
+    <>
+      <Navigation />
+      {isLoaded && <Outlet />}
+    </>
+  );
+}
 
 const router = createBrowserRouter([
   {
