@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { showModal } from '../../store/modals';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import { FaHome } from 'react-icons/fa';
@@ -7,6 +8,7 @@ import { FaUserCircle } from 'react-icons/fa';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
 
   let sessionLinks;
   if (sessionUser) {
@@ -18,8 +20,10 @@ function Navigation() {
         <div className="dropdown">
           <button className="dropbtn"><FaUserCircle size={30} /></button>
           <div className="dropdown-content">
-            <NavLink to="/signup">Sign Up</NavLink>
-            <NavLink to="/login">Log In</NavLink>
+            {/* <NavLink to="/signup">Sign Up</NavLink> */}
+            {/* <NavLink to="/login">Log In</NavLink> */}
+            <button onClick={() => dispatch(showModal('signup'))}>Sign Up</button>
+            <button onClick={() => dispatch(showModal('login'))}>Log In</button>
           </div>
         </div>
       );
