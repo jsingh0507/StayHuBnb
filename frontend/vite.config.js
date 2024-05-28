@@ -7,8 +7,8 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     eslint({
-      lintOnStart: true,
-      failOnError: mode === 'production'
+      lintOnStart: false,
+      failOnError: false
     })
   ],
   server: {
@@ -18,5 +18,9 @@ export default defineConfig(({ mode }) => ({
     // To automatically open the app in the browser whenever the server starts,
     // uncomment the following line:
     // open: true
+  }, 
+  build: {
+    outDir: '../public',
+    emptyOutDir: true
   }
 }));

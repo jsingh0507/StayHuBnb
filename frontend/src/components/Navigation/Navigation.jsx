@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { showModal } from '../../store/modals';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-import { FaHome } from 'react-icons/fa';
 import { FaUserCircle } from 'react-icons/fa';
 
 function Navigation() {

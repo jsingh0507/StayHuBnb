@@ -79,6 +79,4 @@ test:
 #
 production:
   <<: *default
-  database: stay_hu_bnb_production
-  username: stay_hu_bnb
-  password: <%= ENV["STAY_HU_BNB_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
