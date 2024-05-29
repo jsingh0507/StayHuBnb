@@ -5,10 +5,16 @@ import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import { FaUserCircle } from 'react-icons/fa';
 import { GiHamburgerMenu } from "react-icons/gi";
+import { login } from '../../store/session';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+
+  const handleDemoLogin = () => {
+    const demoUser={email: 'demo@user.io', password: 'password' };
+    dispatch(login(demoUser));
+  };
 
   let sessionLinks;
   if (sessionUser) {
@@ -27,6 +33,7 @@ function Navigation() {
             {/* <NavLink to="/login">Log In</NavLink> */}
             <button id="act-btn" onClick={() => dispatch(showModal('signup'))}>Sign Up</button>
             <button id="act-btn" onClick={() => dispatch(showModal('login'))}>Log In</button>
+            <button id="act-btn" onClick={handleDemoLogin}>Demo Login</button>
           </div>
         </div>
       );
