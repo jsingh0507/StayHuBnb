@@ -4,6 +4,7 @@ import { showModal } from '../../store/modals';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import { FaUserCircle } from 'react-icons/fa';
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -17,12 +18,15 @@ function Navigation() {
   } else {
     sessionLinks = (
         <div className="dropdown">
-          <button className="dropbtn"><FaUserCircle size={30} /></button>
+          <button className="dropbtn">
+            <GiHamburgerMenu size={20}/>
+            <FaUserCircle size={30} />
+          </button>
           <div className="dropdown-content">
             {/* <NavLink to="/signup">Sign Up</NavLink> */}
             {/* <NavLink to="/login">Log In</NavLink> */}
-            <button onClick={() => dispatch(showModal('signup'))}>Sign Up</button>
-            <button onClick={() => dispatch(showModal('login'))}>Log In</button>
+            <button id="act-btn" onClick={() => dispatch(showModal('signup'))}>Sign Up</button>
+            <button id="act-btn" onClick={() => dispatch(showModal('login'))}>Log In</button>
           </div>
         </div>
       );

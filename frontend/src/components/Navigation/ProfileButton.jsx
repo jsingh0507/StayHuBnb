@@ -33,19 +33,20 @@ function ProfileButton({ user }) {
     dispatch(sessionActions.logout());
   };
 
+
   return (
     <div className="profile-button">
-      <button onClick={toggleMenu}>
-        <GiHamburgerMenu size={30}/>
+      <button className="prof-button" onClick={toggleMenu}>
+        <GiHamburgerMenu size={20}/>
         <FaUserCircle size={30} />
       </button>
       {showMenu && (
         <ul className="profile-dropdown" ref={dropdownRef}>
-          <li>{user.full_name}</li>
+          <li>{user.fullName}</li>
           <li>{user.email}</li>
-          <li>
+          {/* <li> */}
             <button onClick={logout}>Log Out</button>
-          </li>
+          {/* </li> */}
         </ul>
       )}
     </div>
