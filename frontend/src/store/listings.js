@@ -34,4 +34,4 @@ export default function listingsReducer(state = {}, action){
         default:
             return state;
     }
-};
+}

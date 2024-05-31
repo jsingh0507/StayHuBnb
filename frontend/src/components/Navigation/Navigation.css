@@ -20,8 +20,10 @@ body {
 #bnb-logo {
     object-fit: contain;
     background-color: white;
-    height: 35px;
-    margin-left: 40px;
+    height: 60px;
+    width: 100px;
+    margin-left: 60px;
+
 }
   
 .nav-links {
@@ -31,6 +33,7 @@ body {
   
 .dropdown {
     position: relative;
+    display: inline-block;
 }
   
 .dropbtn {
@@ -39,90 +42,96 @@ body {
     justify-content: space-between;
     background-color: white;
     color: #6a6a6a;
-    border: 0.5px solid #6a6a6a;
+    border: 0.5px solid #dddddd;
     border-radius: 50px;
-    height: 45px;
-    width: 80px;
+    height: 50px;
+    width: 85px;
     cursor: pointer;
     font-size: 16px;
-    margin-right: 40px;
+    margin-right: 60px;
+    margin-top: 1px;
 }
   
 .dropdown-content {
-    display: none;
     position: absolute;
-    width: 250px;
-    right: 40px;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    right: 0;
+    margin-top: 10px;
+    z-index: 100;
+    padding: 10px 0;
+    text-align: left;
 }
 
-#act-btn{
+.dropdown-content button {
     border: none;
     background-color: white;
+    color: #333;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-#act-btn:hover{
-    background-color: lightgray;
+.dropdown-content button:hover {
+    background-color: #f7f7f7;
 }
   
-.dropdown-content a {
-    color: black;
-    padding: 10px 14px;
-    text-decoration: none;
-    display: block;
-}
-  
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-  
-.dropdown:hover .dropdown-content {
-    display: flex;
-    flex-direction: column;
-}
-  
-.dropdown:hover .dropbtn {
-    background-color: #ddd;
-}
-
 .profile-dropdown {
     position: absolute;
     background-color: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    right: 40px;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* border: 1px solid #ccc; */
+    border-radius: 10px;
+    right: 20px;
+    margin-top: 10px;
+    z-index: 100;
+    padding: 10px 0;
+    text-align: left;
 }
 
 .profile-dropdown button {
     border: none;
     background-color: white;
+    color: #333;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.profile-dropdown p {
+    border: none;
+    background-color: white;
+    color: #333;
+    padding: 10px 20px;
+    width: 50%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
 }
 
 .profile-dropdown button:hover{
     background-color: lightgray;
-    width: 250px;
 }
   
-.profile-dropdown li {
-        display: flex;
-        justify-content: center;
-        margin: 5px 0;
-        color: black;
-}
-
 .prof-button{
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: white;
     color: #6a6a6a;
-    border: 0.5px solid #6a6a6a;
+    border: 0.5px solid #dddddd;
     border-radius: 50px;
-    height: 45px;
-    width: 80px;
+    height: 50px;
+    width: 85px;
     cursor: pointer;
     font-size: 16px;
-    margin-right: 40px;
+    margin-right: 60px;
+    margin-top: 1px;
 }

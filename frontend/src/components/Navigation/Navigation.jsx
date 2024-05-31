@@ -6,10 +6,32 @@ import './Navigation.css';
 import { FaUserCircle } from 'react-icons/fa';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { login } from '../../store/session';
+import { useState, useEffect, useRef } from 'react';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const [showMenu, setShowMenu] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const toggleMenu = (e) => {
+    e.stopPropagation(); 
+    setShowMenu(!showMenu);
+  };
+
+  useEffect(() => {
+    if (!showMenu) return;
+
+    const closeMenu = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener('click', closeMenu);
+  
+    return () => document.removeEventListener('click', closeMenu);
+  }, [showMenu]);
 
   const handleDemoLogin = () => {
     const demoUser={email: 'demo@user.io', password: 'password' };
@@ -24,17 +46,19 @@ function Navigation() {
   } else {
     sessionLinks = (
         <div className="dropdown">
-          <button className="dropbtn">
+          <button className="dropbtn" onClick={toggleMenu}>
             <GiHamburgerMenu size={20}/>
             <FaUserCircle size={30} />
           </button>
-          <div className="dropdown-content">
-            {/* <NavLink to="/signup">Sign Up</NavLink> */}
-            {/* <NavLink to="/login">Log In</NavLink> */}
-            <button id="act-btn" onClick={() => dispatch(showModal('signup'))}>Sign Up</button>
-            <button id="act-btn" onClick={() => dispatch(showModal('login'))}>Log In</button>
-            <button id="act-btn" onClick={handleDemoLogin}>Demo Login</button>
-          </div>
+          {showMenu && (
+            <div className="dropdown-content" ref={dropdownRef}>
+              {/* <NavLink to="/signup">Sign Up</NavLink> */}
+              {/* <NavLink to="/login">Log In</NavLink> */}
+              <button onClick={() => dispatch(showModal('signup'))}>Sign Up</button>
+              <button onClick={() => dispatch(showModal('login'))}>Log In</button>
+              <button onClick={handleDemoLogin}>Demo Login</button>
+            </div>
+          )}
         </div>
       );
   }

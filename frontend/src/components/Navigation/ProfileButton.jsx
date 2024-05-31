@@ -41,13 +41,11 @@ function ProfileButton({ user }) {
         <FaUserCircle size={30} />
       </button>
       {showMenu && (
-        <ul className="profile-dropdown" ref={dropdownRef}>
-          <li>{user.fullName}</li>
-          <li>{user.email}</li>
-          {/* <li> */}
-            <button onClick={logout}>Log Out</button>
-          {/* </li> */}
-        </ul>
+        <div className="profile-dropdown" ref={dropdownRef}>
+          <p>{user.fullName}</p>
+          <p>{user.email}</p>
+          <button onClick={logout}>Log Out</button>
+        </div>
       )}
     </div>
   );
