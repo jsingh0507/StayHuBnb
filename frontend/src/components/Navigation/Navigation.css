@@ -10,6 +10,8 @@ body {
     padding: 10px 20px;
     background-color: white;
     border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
 }
   
 .logo {

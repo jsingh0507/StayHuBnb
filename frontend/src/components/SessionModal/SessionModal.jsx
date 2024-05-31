@@ -14,23 +14,31 @@ function SessionModal() {
 
   const onClose = () => dispatch(hideModal());
 
+  const handleOverlayClick = () => onClose();
+
   return (
-    <Modal onClose={onClose}>
-      <div className="session-modal">
-         <button id="close-button" onClick={onClose}>
-          &times;
-        </button>
-        {modalType === 'login' ? <LoginForm /> : <SignupForm />}
-        <button
-          className="link"
-          onClick={() =>
-            dispatch(showModal(modalType === 'login' ? 'signup' : 'login'))
-          }
-        >
-          {modalType === 'login' ? 'Sign up' : 'Log in'} instead
-        </button>
-      </div>
-    </Modal>
+    <>
+      <div className='overlay' onClick={handleOverlayClick}></div>
+      <Modal onClose={onClose}>
+        <div className="session-modal">
+          <div id='line'>
+            <button id="close-button" onClick={onClose}>
+              &times;
+            </button>
+            <h2>{modalType === 'login' ? 'Log In ' : 'SignUp'}</h2>
+          </div>
+          {modalType === 'login' ? <LoginForm /> : <SignupForm />}
+          <button
+            className="link"
+            onClick={() =>
+              dispatch(showModal(modalType === 'login' ? 'signup' : 'login'))
+            }
+          >
+            {modalType === 'login' ? 'Sign up' : 'Log in'} instead
+          </button>
+        </div>
+      </Modal>
+    </>
   );
 }
 
