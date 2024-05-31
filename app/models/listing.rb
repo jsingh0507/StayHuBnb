@@ -20,6 +20,8 @@
 #
 class Listing < ApplicationRecord
 
+    #ARAY = [catagories string]
+
     validates :title, presence: true, length: {maximum: 255}
     validates :description, presence: true
     validates :price, presence: true, numericality: { greater_than: 0 }
