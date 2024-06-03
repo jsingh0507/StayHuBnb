@@ -37,6 +37,10 @@ class Listing < ApplicationRecord
         foreign_key: :host_id,
         class_name: 'User'
 
+    has_one_attached :cover_photo
+    
+    has_many_attached :photos
+
     # has_many :reservations, 
     #     dependent: :destroy
     # has_many :reviews, 

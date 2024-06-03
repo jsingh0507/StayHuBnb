@@ -19,7 +19,7 @@ const ListingsIndex = () => {
                     <li key={listing.id} className="listing-card">
                         <Link to={`/${listing.id}`} className="listing-link">
                         <img 
-                            src="https://t3.ftcdn.net/jpg/01/18/46/52/360_F_118465200_0q7Of6UnbA8kDlYEe3a4PuIyue27fbuV.jpg" 
+                            src={`${listing?.photoUrl}`} 
                             alt={listing.title} 
                             className="listing-image"
                         />

@@ -1,3 +1,4 @@
+require "open-uri"
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -7,7 +8,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-ApplicationRecord.transaction do
+# ApplicationRecord.transaction do
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
@@ -41,7 +42,7 @@ ApplicationRecord.transaction do
 
     puts "Creating listings..."
     # Create Listings
-    Listing.create!(
+    listing1 = Listing.create!(
       title: 'Lakefront House',
       description: 'A house with beatiful lake view.',
       price: 150.00,
@@ -55,8 +56,9 @@ ApplicationRecord.transaction do
       address: '123 Country Lane',
       host: user1
     )
+    listing1.cover_photo.attach(io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/cover.jpg"), filename: "cover.png")
 
-    Listing.create!(
+    listing2 = Listing.create!(
       title: 'Modern Apartment',
       description: 'A city apratment with the perfect view.',
       price: 200.00,
@@ -71,7 +73,7 @@ ApplicationRecord.transaction do
       host: user2
     )
 
-    Listing.create!(
+    listing3 = Listing.create!(
       title: 'Beach House',
       description: 'Beeatiful beach view.',
       price: 300.00,
@@ -86,7 +88,7 @@ ApplicationRecord.transaction do
       host: user3
     )
 
-    Listing.create!(
+    listing4 = Listing.create!(
       title: 'Cozy Cabin',
       description: 'Old school cabin in the mountain.',
       price: 120.00,
@@ -101,7 +103,7 @@ ApplicationRecord.transaction do
       host: user1
     )
 
-    Listing.create!(
+    listing5 = Listing.create!(
       title: 'Luxury Villa',
       description: 'A luxurious villa with all the amenities.',
       price: 500.00,
@@ -116,7 +118,7 @@ ApplicationRecord.transaction do
       host: user2
     )
 
-    Listing.create!(
+    listing6 = Listing.create!(
       title: 'Treehouse',
       description: 'A nice cozy treehouse',
       price: 220.00,
@@ -132,4 +134,4 @@ ApplicationRecord.transaction do
     )
     puts "Done!"
 
-end
+# end
