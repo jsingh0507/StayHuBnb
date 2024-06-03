@@ -6,6 +6,7 @@ import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import SessionModal from './components/SessionModal/SessionModal';
 import Navigation from './components/Navigation/Navigation';
 import ListingsIndex from './components/ListingsIndex/ListingsIndex';
+import ListingShow from './components/ListingShow/ListingShow';
 import * as sessionActions from './store/session';
 
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         path: '/',
         // element: <h1></h1>
         element: <ListingsIndex />
+      },
+      {
+        path: "/:listingId",
+        element: <ListingShow />
       }
       // {
       //   path: 'login',
