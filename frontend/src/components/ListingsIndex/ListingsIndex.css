@@ -57,3 +57,10 @@
     color: #222222;
     margin: 0;
 }
+
+.listing-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}

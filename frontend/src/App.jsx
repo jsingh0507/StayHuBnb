@@ -35,21 +35,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        // element: <h1></h1>
         element: <ListingsIndex />
       },
       {
         path: "/:listingId",
         element: <ListingShow />
       }
-      // {
-      //   path: 'login',
-      //   element: <LoginForm />
-      // },
-      // {
-      //   path: 'signup',
-      //   element: <SignupForm />
-      // }
     ]
   }
 ]);

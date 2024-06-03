@@ -17,6 +17,10 @@ const ListingShow = () => {
     return <div>Loading...</div>;
   }
 
+  if (!listing.host) {
+    return <div>Loading host information...</div>;
+  }
+
   return (
     <div className="listing-show">
       <div className="listing-header">
@@ -33,18 +37,25 @@ const ListingShow = () => {
         </div>
       </div>
 
+      <div className="split-container">
+      <div className='split left'>
       <div className="listing-owner">
         <p className="listing-location">{listing.address}</p>
+        <div className='divider'></div>
         <div className="listing-host">
           <img src="https://www.wolfhooker.com/wp-content/uploads/2019/02/176-1763433_user-account-profile-avatar-person-male-icon-icon-user-account.png.jpeg" alt={listing.host.full_name} className="host-avatar" />
-          <span className="host-name">Hosted by {listing.host.full_name}</span>
+          <span className="host-name">Hosted by {listing.host.fullName}</span>
         </div>
+        <div className='divider'></div>
       </div>
 
       <div className="listing-details">
         <h2>About this space</h2>
         <p>{listing.description}</p>
 
+        <div className='divider'></div>
+
+        <h3>What this place offers</h3>
         <div className="amenities">
           {listing.amenities.split(',').map((amenity, index) => (
             <div className="amenity" key={index}>
@@ -53,11 +64,17 @@ const ListingShow = () => {
             </div>
           ))}
         </div>
+
+        <div className='divider'></div>
+      </div>
       </div>
 
-      <div className="pricing-booking">
+      <div className='split right'>
+      <div className="pricing-reservation">
         <div className="pricing">${listing.price} per night</div>
-        <button className="booking-button">Book Now</button>
+        <button className="reserve-button">Book Now</button>
+      </div>
+      </div>
       </div>
 
       <div className="reviews">
