@@ -13,11 +13,13 @@ require "open-uri"
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
     Listing.destroy_all
+    Reservation.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('listings')
+    ApplicationRecord.connection.reset_pk_sequence!('reservations')
   
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
@@ -219,6 +221,32 @@ require "open-uri"
       { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing8_4.jpg"), filename: "listing8_4.jpg" },
       { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing8_5.jpg"), filename: "listing8_5.jpg" }
     ])
+
+    puts "Creating reservations..."
+    # Create Reservations
+    reservation1 = Reservation.create!(
+      listing: listing1,
+      user: user2,
+      start_date: Date.today,
+      end_date: Date.today + 3.days,
+      guest: 2
+    )
+
+    reservation2 = Reservation.create!(
+      listing: listing2,
+      user: user3,
+      start_date: Date.today + 5.days,
+      end_date: Date.today + 8.days,
+      guest: 3
+    )
+
+    reservation3 = Reservation.create!(
+      listing: listing3,
+      user: user1,
+      start_date: Date.today + 10.days,
+      end_date: Date.today + 15.days,
+      guest: 4
+    )
 
   puts "Done!"
 

@@ -25,6 +25,9 @@ class User < ApplicationRecord
     foreign_key: :host_id, 
     dependent: :destroy
 
+  has_many :reservations, 
+    dependent: :destroy
+
   before_validation :ensure_session_token
 
   def self.find_by_credentials(email, password)
