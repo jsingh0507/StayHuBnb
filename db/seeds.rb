@@ -56,7 +56,14 @@ require "open-uri"
       address: '123 Country Lane',
       host: user1
     )
-    listing1.cover_photo.attach(io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/cover.jpg"), filename: "cover.png")
+    # listing1.cover_photo.attach(io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/cover.jpg"), filename: "cover.png")
+    listing1.photos.attach([
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing1_1.jpg"), filename: "listing1_1.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing1_2.jpg"), filename: "listing1_2.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing1_3.jpg"), filename: "listing1_3.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing1_4.jpg"), filename: "listing1_4.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing1_5.jpg"), filename: "listing1_5.jpg" }
+    ])
 
     listing2 = Listing.create!(
       title: 'Modern Apartment',
@@ -73,6 +80,14 @@ require "open-uri"
       host: user2
     )
 
+    listing2.photos.attach([
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing2_1.jpg"), filename: "listing2_1.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing2_2.jpg"), filename: "listing2_2.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing2_3.jpg"), filename: "listing2_3.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing2_4.jpg"), filename: "listing2_4.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing2_5.jpg"), filename: "listing2_5.jpg" }
+    ])
+
     listing3 = Listing.create!(
       title: 'Beach House',
       description: 'Beeatiful beach view.',
@@ -87,6 +102,13 @@ require "open-uri"
       address: '789 Ocean Drive',
       host: user3
     )
+    listing3.photos.attach([
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing3_1.jpg"), filename: "listing3_1.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing3_2.jpg"), filename: "listing3_2.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing3_3.jpg"), filename: "listing3_3.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing3_4.jpg"), filename: "listing3_4.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing3_5.jpg"), filename: "listing3_5.jpg" }
+    ])
 
     listing4 = Listing.create!(
       title: 'Cozy Cabin',
@@ -102,6 +124,13 @@ require "open-uri"
       address: '101 Mountain Trail',
       host: user1
     )
+    listing4.photos.attach([
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing4_1.jpg"), filename: "listing4_1.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing4_2.jpg"), filename: "listing4_2.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing4_3.jpg"), filename: "listing4_3.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing4_4.jpg"), filename: "listing4_4.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing4_5.jpg"), filename: "listing4_5.jpg" }
+    ])
 
     listing5 = Listing.create!(
       title: 'Luxury Villa',
@@ -117,6 +146,13 @@ require "open-uri"
       address: '102 Luxury Lane',
       host: user2
     )
+    listing5.photos.attach([
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing5_1.jpg"), filename: "listing5_1.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing5_2.jpg"), filename: "listing5_2.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing5_3.jpg"), filename: "listing5_3.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing5_4.jpg"), filename: "listing5_4.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing5_5.jpg"), filename: "listing5_5.jpg" }
+    ])
 
     listing6 = Listing.create!(
       title: 'Treehouse',
@@ -132,6 +168,58 @@ require "open-uri"
       address: '103 Hululu Blvd',
       host: user3
     )
-    puts "Done!"
+    listing6.photos.attach([
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing6_1.jpg"), filename: "listing6_1.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing6_2.jpg"), filename: "listing6_2.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing6_3.jpg"), filename: "listing6_3.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing6_4.jpg"), filename: "listing6_4.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing6_5.jpg"), filename: "listing6_5.jpg" }
+    ])
+
+    listing7 = Listing.create!(
+      title: 'Penthouse Suite',
+      description: 'A luxurious penthouse with stunning city views.',
+      price: 600.00,
+      wifi: true,
+      pet_friendly: false,
+      air_conditioning: true,
+      heating: true,
+      amenities: 'Private Elevator, Rooftop Pool, Concierge Service',
+      latitude: 34.0522,
+      longitude: -118.2437,
+      address: '104 Sky High Ave',
+      host: user1
+    )
+    listing7.photos.attach([
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing7_1.jpg"), filename: "listing7_1.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing7_2.jpg"), filename: "listing7_2.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing7_3.jpg"), filename: "listing7_3.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing7_4.jpg"), filename: "listing7_4.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing7_5.jpg"), filename: "listing7_5.jpg" }
+    ])
+
+    listing8 = Listing.create!(
+      title: 'Country Cottage',
+      description: 'A charming cottage in the countryside.',
+      price: 180.00,
+      wifi: false,
+      pet_friendly: true,
+      air_conditioning: false,
+      heating: true,
+      amenities: 'Garden, Fireplace, Parking',
+      latitude: 51.5074,
+      longitude: -0.1278,
+      address: '105 Rural Road',
+      host: user2
+    )
+    listing8.photos.attach([
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing8_1.jpg"), filename: "listing8_1.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing8_2.jpg"), filename: "listing8_2.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing8_3.jpg"), filename: "listing8_3.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing8_4.jpg"), filename: "listing8_4.jpg" },
+      { io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/listing8_5.jpg"), filename: "listing8_5.jpg" }
+    ])
+
+  puts "Done!"
 
 # end

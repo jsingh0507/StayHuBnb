@@ -5,3 +5,9 @@ json.host do
   json.full_name @listing.host.full_name
   json.email @listing.host.email
 end
+
+json.photos do
+  @listing.photos.each do |photo|
+    json.array!([{ url: photo.url }])
+  end
+end

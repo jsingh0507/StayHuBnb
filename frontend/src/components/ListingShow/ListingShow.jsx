@@ -28,12 +28,12 @@ const ListingShow = () => {
       </div>
 
       <div className="image-gallery">
-        <img src="https://www.contemporist.com/wp-content/uploads/2020/10/modern-house-architecture-white-exterior-181020-559-02.jpg" alt="Listing image 1" className="large-image" />
+        <img src={listing.photos[0].url} alt="Listing image 1" className="large-image" />
         <div className="small-images">
-          <img src="https://www.contemporist.com/wp-content/uploads/2020/10/modern-house-architecture-white-exterior-181020-559-03.jpg" alt="Listing image 2" />
-          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhdXRpZnVsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D" alt="Listing image 3" />
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FEev6wC1zR8e90yrzM5NCosLt_F70k3RmA&s" alt="Listing image 4" />
-          <img src="https://ychef.files.bbci.co.uk/624x351/p0h9k5dl.jpg" alt="Listing image 5" />
+          <img src={listing.photos[1].url} alt="Listing image 2" />
+          <img src={listing.photos[2].url} alt="Listing image 3" />
+          <img src={listing.photos[3].url} alt="Listing image 4" />
+          <img src={listing.photos[4].url} alt="Listing image 5" />
         </div>
       </div>
 
