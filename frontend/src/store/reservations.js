@@ -19,6 +19,10 @@ const removeReservation = (reservationId) => ({
   reservationId
 });
 
+export const selectReservationsArray = (state) => {
+  return Object.values(state.reservations) || []
+}
+
 export const fetchReservations = () => async (dispatch) => {
   const res = await csrfFetch("/api/reservations");
   const data = await res.json();

@@ -1,0 +1,33 @@
+.reservation-index {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .reservation-index h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .reservation-index ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .reservation-index li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .reservation-index li p {
+    margin: 0;
+  }
+  
+  .reservation-index li p:first-child {
+    font-weight: bold;
+  }
+  

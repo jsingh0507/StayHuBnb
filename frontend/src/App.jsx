@@ -7,6 +7,7 @@ import SessionModal from './components/SessionModal/SessionModal';
 import Navigation from './components/Navigation/Navigation';
 import ListingsIndex from './components/ListingsIndex/ListingsIndex';
 import ListingShow from './components/ListingShow/ListingShow';
+import ReservationIndex from './components/ReservationIndex/ReservationIndex';
 import * as sessionActions from './store/session';
 
 
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/:listingId",
         element: <ListingShow />
+      },
+      {
+        path: '/reservations',
+        element: <ReservationIndex />
       }
     ]
   }
