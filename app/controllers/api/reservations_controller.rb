@@ -15,7 +15,7 @@ class Api::ReservationsController < ApplicationController
         @reservation = Reservation.new(reservation_params)
         @reservation.user_id = current_user.id
         if @reservation.save
-          render :show, status: :created
+          render :index, status: :created
         else
           render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
         end

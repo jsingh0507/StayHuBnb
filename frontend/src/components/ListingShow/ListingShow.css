@@ -1,46 +1,75 @@
+/* General styles */
 .listing-show {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     font-family: 'Airbnb Cereal App', 'Arial', sans-serif;
 }
-  
+
+/* Header */
 .listing-header {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-.listing-owner {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-  
 .listing-header h1 {
     font-size: 2.5em;
     margin: 0;
     color: #484848;
 }
-  
+
+/* Image gallery */
+.image-gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.large-image {
+    grid-row: span 2;
+    height: 400px;
+}
+
+.small-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* Owner and details */
+.listing-owner {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
 .listing-owner .listing-location {
     font-size: 1.2em;
     color: #767676;
 }
-  
+
 .listing-owner .listing-host {
     display: flex;
     align-items: center;
     margin-top: 10px;
 }
-  
+
 .listing-owner .host-avatar {
     border-radius: 50%;
     width: 50px;
     height: 50px;
     margin-right: 10px;
 }
-  
+
 .listing-owner .host-name {
     font-size: 1.2em;
     color: #484848;
@@ -50,43 +79,11 @@
     margin-top: 10px;
     border-bottom: 1px solid #ddd;
 }
-/* Image gallery */
-.image-gallery {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 10px;
-    /* margin-bottom: 0; */
-}
-  
-.image-gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-  
-.image-gallery .large-image {
-    grid-row: span 2;
-    height: 400px;
-    width: 550px;
-}
-  
-.small-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-    width: 600px;
-    margin-right: 60px;
-}
-  
-.small-images img {
-    height: 195px;
-    object-fit: cover;
-    border-radius: 10px;
-}
 
+/* Split container */
 .split-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
 }
@@ -94,14 +91,15 @@
 .split {
     flex: 1;
     margin: 10px;
+    min-width: 300px;
 }
 
 .left {
-    margin-right: 20px;
+    order: 1;
 }
 
 .right {
-    margin-left: 20px;
+    order: 2;
 }
 
 /* Details and amenities */
@@ -110,13 +108,13 @@
     flex-direction: column;
     margin-bottom: 20px;
 }
-  
+
 .listing-details h2 {
     font-size: 1.5em;
     margin: 0 0 10px;
     color: #484848;
 }
-  
+
 .listing-details p {
     font-size: 1em;
     line-height: 1.5;
@@ -129,13 +127,13 @@ h3 {
     font-size: 1.5em;
     color: #484848;
 }
-  
+
 .amenities {
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
 }
-  
+
 .amenity {
     display: flex;
     align-items: center;
@@ -144,15 +142,16 @@ h3 {
     font-size: 1em;
     color: #484848;
 }
-  
+
 .amenity i {
     font-size: 1.2em;
     margin-right: 5px;
 }
-  
+
 /* Pricing and booking */
 .pricing-reservation {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
@@ -160,19 +159,15 @@ h3 {
     border: 1px solid #ddd;
     border-radius: 10px;
     background-color: #f7f7f7;
-    flex-direction: column;
-    width: 250px;
-    position: absolute;
-    top: 700px;
-    right: 160px;
+    max-width: 300px;
 }
-  
+
 .pricing {
     font-size: 1.5em;
     font-weight: bold;
     color: #484848;
 }
-  
+
 .reserve-button {
     padding: 10px 20px;
     font-size: 1em;
@@ -183,68 +178,39 @@ h3 {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-  
+
 .reserve-button:hover {
     background-color: #e14a4f;
 }
-  
+
 /* Reviews */
-/* .reviews {
+.reviews {
     margin-top: 20px;
 }
-  
-.review {
-    display: flex;
-    align-items: start;
-    margin-bottom: 20px;
-}
-  
-.review .review-avatar {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-  
-.review .review-content {
-    flex: 1;
-}
-  
-.review .review-author {
-    font-weight: bold;
-    color: #484848;
-}
-  
-.review .review-text {
-    font-size: 1em;
-    line-height: 1.5;
-    color: #484848;
-} */
-  
+
+/* Responsive design */
 @media (max-width: 768px) {
-    .pricing-booking {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .pricing-booking .booking-button {
-        margin-top: 10px;
-        width: 100%;
+    .image-gallery {
+        grid-template-columns: 1fr;
     }
 
-    .image-gallery .large-image {
-            width: 100%;
-            height: auto;
+    .large-image {
+        height: auto;
     }
-    
+
     .small-images {
-            width: auto;
-            margin-right: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
     }
-    
-    .small-images img {
-            height: auto;
-            max-width: 100%;
+
+    .split-container {
+        flex-direction: column;
+    }
+
+    .pricing-reservation {
+        width: 100%;
+        position: static;
+        top: auto;
+        right: auto;
     }
 }
-  
