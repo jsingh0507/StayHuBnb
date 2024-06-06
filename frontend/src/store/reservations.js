@@ -15,28 +15,32 @@ const receiveReservation = (reservation) => ({
   reservation
 });
 
-const removeReservation = (reservationId) => ({
-  type: REMOVE_RESERVATION,
-  reservationId
-});
+const removeReservation = (reservationId) => {
+  // debugger
+  return {
+    type: REMOVE_RESERVATION,
+    reservationId
+  }
+};
 
 export const selectReservation = (reservationId) => (state) => {
   return state.reservations[reservationId] || null
 }
 
-// export const selectReservationsArray = (state) => {
-//   return Object.values(state.reservations) || []
-// }
+export const selectReservationsArray = (state) => {
+  // debugger
+  return Object.values(state.reservations) || []
+}
 
 // export const selectReservationsArray = createSelector(
 //   state => state.reservations, 
 //   state => Object.values(state.reservations) ?? []
 // )
 
-export const selectReservationsArray = createSelector(
-  state => state.reservations, 
-  reservations => Object.values(reservations ?? {})
-)
+// export const selectReservationsArray = createSelector(
+//   state => state.reservations, 
+//   reservations => Object.values(reservations ?? {})
+// )
 export const fetchReservations = () => async (dispatch) => {
   const res = await csrfFetch("/api/reservations");
 
@@ -94,6 +98,7 @@ export const deleteReservation = (reservationId) => async (dispatch) => {
       'Content-Type': 'application/json'
     }
   });
+  // debugger
   if (res.ok){
     dispatch(removeReservation(reservationId));
   }
@@ -103,10 +108,12 @@ const reservationsReducer = (state = {}, action) => {
   const newState = { ...state };
   switch(action.type) {
     case RECEIVE_RESERVATIONS:
+      // debugger
       return { ...state, ...action.reservations };
     case RECEIVE_RESERVATION:
       return { ...state, [action.reservation.id]: action.reservation };
     case REMOVE_RESERVATION:
+      // debugger
       delete newState[action.reservationId];
       return newState;
     default:

@@ -45,7 +45,7 @@ const ListingShow = () => {
       user_id: currentUser.id,
     };
 
-    await dispatch(createReservation(reservation));
+    dispatch(createReservation(reservation));
     navigate('/reservations');  // Redirect to reservations page
   };
 

@@ -15,6 +15,7 @@ class Api::ReservationsController < ApplicationController
         @reservation = Reservation.new(reservation_params)
         @reservation.user_id = current_user.id
         if @reservation.save
+          @reservations = Reservation.all
           render :index, status: :created
         else
           render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
@@ -30,6 +31,7 @@ class Api::ReservationsController < ApplicationController
     end
     
     def destroy
+        # debugger
         @reservation.destroy
         @reservations = Reservation.all
         render :index

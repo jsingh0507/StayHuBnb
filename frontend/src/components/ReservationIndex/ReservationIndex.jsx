@@ -19,6 +19,7 @@ const ReservationIndex = () => {
 
   const handleDelete = (reservationId) => {
     console.log('Deleting reservation with ID:', reservationId);
+    // debugger
     dispatch(deleteReservation(reservationId));
   };
 
@@ -29,8 +30,8 @@ const ReservationIndex = () => {
         {reservations.map(reservation => (
           <li key={reservation.id}>
             <p>Reservation ID: {reservation.id}</p>
-            <p>Start Date: {reservation.start_date}</p>
-            <p>End Date: {reservation.end_date}</p>
+            <p>Start Date: {reservation.startDate}</p>
+            <p>End Date: {reservation.endDate}</p>
             <p>Guests: {reservation.guest}</p>
             <p>Price per Night: ${reservation.price}</p>
             <button onClick={() => handleDelete(reservation.id)}>Delete</button>
