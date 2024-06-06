@@ -31,7 +31,7 @@ class Api::ReservationsController < ApplicationController
     
     def destroy
         @reservation.destroy
-        render :index
+        head :no_content
     end
     
     private

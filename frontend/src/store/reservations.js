@@ -19,6 +19,10 @@ const removeReservation = (reservationId) => ({
   reservationId
 });
 
+export const selectReservation = (reservationId) => (state) => {
+  return state.reservations[reservationId] || null
+}
+
 export const selectReservationsArray = (state) => {
   return Object.values(state.reservations) || []
 }

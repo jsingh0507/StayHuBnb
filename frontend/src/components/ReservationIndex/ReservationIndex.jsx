@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchReservations, selectReservationsArray, deleteReservation } from '../../store/reservations';
+import { Link } from 'react-router-dom';
 import './ReservationIndex.css';
 
 const ReservationIndex = () => {
@@ -32,6 +33,7 @@ const ReservationIndex = () => {
             <p>Guests: {reservation.guest}</p>
             <p>Price per Night: ${reservation.price}</p>
             <button onClick={() => handleDelete(reservation.id)}>Delete</button>
+            <Link to={`/reservations/${reservation.id}/edit`}><button>Edit</button></Link>
           </li>
         ))}
       </ul>
