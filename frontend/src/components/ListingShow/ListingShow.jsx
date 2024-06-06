@@ -57,6 +57,10 @@ const ListingShow = () => {
     return 0;
   };
 
+  const generateRandomRating = () => {
+    return (Math.floor(Math.random() * (500 - 400 + 1)) + 400) / 100;
+  };
+
   return (
     <div className="listing-show">
       <div className="listing-header">
@@ -73,11 +77,16 @@ const ListingShow = () => {
       <div className="split-container">
         <div className='split left'>
           <div className="listing-owner">
-            <p className="listing-location">{listing.address}</p>
+            <p className="listing-location">Entire house in {listing.address}</p>
+            <p className='info-tg'>Studio · 4 beds · 2 bath</p>
+            <p id='rating'>&#9733; {generateRandomRating().toFixed(2)}</p>
             <div className='divider'></div>
             <div className="listing-host">
-              <img src="https://www.wolfhooker.com/wp-content/uploads/2019/02/176-1763433_user-account-profile-avatar-person-male-icon-icon-user-account.png.jpeg" alt={listing.host.full_name} className="host-avatar" />
+              <img src="https://cdn.britannica.com/82/156482-131-AEEBFEFC/New-York-York.jpg?w=840&h=460&c=crop" alt={listing.host.full_name} className="host-avatar" />
+              <div className='flex'>
               <span className="host-name">Hosted by {listing.host.fullName}</span>
+              <p id='rat'>Superhost · 2 years hosting</p>
+              </div>
             </div>
             <div className='divider'></div>
           </div>
