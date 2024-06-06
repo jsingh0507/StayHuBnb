@@ -44,7 +44,7 @@ const ListingsIndex = () => {
                             <p className="listing-rating">&#9733; {generateRandomRating().toFixed(2)}</p>
                             {/* <p className="listing-price">$<span className="price-value">{listing.price/10}</span> night</p> */}
                             <p className="listing-price">
-                                    <span className="price-value">${listing.price/10}</span> 
+                                    <span className="price-value">${listing.price/1}</span> 
                                     <span className="per-night"> night</span>
                             </p>
                         </div>

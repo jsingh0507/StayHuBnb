@@ -18,6 +18,7 @@ const ReservationIndex = () => {
   }
 
   const handleDelete = (reservationId) => {
+    console.log('Deleting reservation with ID:', reservationId);
     dispatch(deleteReservation(reservationId));
   };
 

@@ -54,7 +54,7 @@ const ListingShow = () => {
       const days = (endDate - startDate) / (1000 * 60 * 60 * 24);
       return days * listing.price;
     }
-    return 0;
+    return listing.price;
   };
 
   const generateRandomRating = () => {
@@ -113,8 +113,10 @@ const ListingShow = () => {
 
         <div className='split right'>
           <div className="pricing-reservation">
-            <div className="pricing">${listing.price} per night</div>
+            <div className="pricing">${calculateTotalPrice()/1} night</div>
             <form className="reservation-form" onSubmit={handleReserve}>
+              <div className='res-grid'>
+              <div className='lbl-box'>
               <label>
                 Check-in:
                 <DatePicker 
@@ -126,8 +128,10 @@ const ListingShow = () => {
                   minDate={new Date()}
                 />
               </label>
+              </div>
+              <div className='lbl-box '>
               <label>
-                Check-out:
+              Check-out:
                 <DatePicker 
                   selected={endDate} 
                   onChange={(date) => setEndDate(date)} 
@@ -137,8 +141,10 @@ const ListingShow = () => {
                   minDate={startDate}
                 />
               </label>
+              </div>
+              <div className='lbl-box guest-col guest-row'>
               <label>
-                Guests:
+              Guests:
                 <input 
                   type="number" 
                   value={guest} 
@@ -146,8 +152,10 @@ const ListingShow = () => {
                   onChange={(e) => setGuest(parseInt(e.target.value, 10))} 
                 />
               </label>
+              </div>
+              </div>
               <div className="total-price">
-                Total: ${calculateTotalPrice()}
+                Total: ${calculateTotalPrice()/1}
               </div>
               <button className="reserve-button" type="submit">
                 Reserve
@@ -171,6 +179,6 @@ const ListingShow = () => {
       </div>
     </div>
   );
-  };
+};
 
 export default ListingShow;
