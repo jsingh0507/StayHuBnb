@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchListing } from '../../store/listings';
-import { useParams } from 'react-router-dom';
+import { createReservation } from '../../store/reservations';
+import { useParams} from 'react-router-dom';
 import './ListingShow.css';
 
 const ListingShow = () => {
