@@ -63,15 +63,6 @@ const ListingShow = () => {
         <h1>{listing.title}</h1>
       </div>
 
-      {/* <div className="image-gallery">
-        <img src={listing.photos[0].url} alt="Listing image 1" className="large-image" />
-        <div className="small-images">
-          {listing.photos.slice(1).map((photo, index) => (
-            <img src={photo.url} alt={`Listing image ${index + 2}`} key={index} />
-          ))}
-        </div>
-      </div> */}
-
       <div className='image-grid'>
       <img className='large-image-col large-image-row' src={listing.photos[0].url} alt="Listing image 1"/>
         {listing.photos.slice(1).map((photo, index) => (

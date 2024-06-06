@@ -12,6 +12,20 @@ const ListingsIndex = () => {
         dispatch(fetchListings());
     }, [dispatch]);
 
+    const generateRandomMiles = () => {
+        return Math.floor(Math.random() * (50 - 2 + 1)) + 2;
+    };
+
+    const generateRandomRating = () => {
+        return (Math.floor(Math.random() * (500 - 400 + 1)) + 400) / 100;
+    };
+
+    const generateRandomDateRange = () => {
+        const startDay = Math.floor(Math.random() * 31) + 1; // Random day between 1 and 31
+        const endDay = Math.min(startDay + Math.floor(Math.random() * (31 - startDay + 1)), 31); // Random day between startDay and 31
+        return `Jun ${startDay}-${endDay}`;
+    };
+
     return (
         <div className="listings-container">
             <ul className="listings-grid">
@@ -24,9 +38,15 @@ const ListingsIndex = () => {
                             className="listing-image"
                         />
                         <div className="listing-info">
-                            <p className="listing-title">{listing.title}</p> 
-                            <p className="listing-address">{listing.address}</p> 
-                            <p className="listing-price">${listing.price} per night</p>
+                            <p className="listing-title">{listing.address}</p> 
+                            <p className="listing-miles">{generateRandomMiles()} miles away</p>
+                            <p className="listing-date">{generateRandomDateRange()}</p> 
+                            <p className="listing-rating">&#9733; {generateRandomRating().toFixed(2)}</p>
+                            {/* <p className="listing-price">$<span className="price-value">{listing.price/10}</span> night</p> */}
+                            <p className="listing-price">
+                                    <span className="price-value">${listing.price/10}</span> 
+                                    <span className="per-night"> night</span>
+                            </p>
                         </div>
                         </Link>
                     </li>

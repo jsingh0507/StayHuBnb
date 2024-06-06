@@ -45,8 +45,8 @@ require "open-uri"
     puts "Creating listings..."
     # Create Listings
     listing1 = Listing.create!(
-      title: 'Lakefront House',
-      description: 'A house with beatiful lake view.',
+      title: 'EAGLE WATCH MALIBU- Architectural w/ Ocean View',
+      description: 'Embodying everything your heart can conjure when dreaming upon the perfect lakefront vacation, this 3500 sq ft Grand Dame of the Poconos, with its stunning lake views in every direction, fresh off a complete remodel, is being offered to the public for the very first time.  From hot tubs, hammocks, kayaks & other peaceful places to relax, to game and groovy rooms meant for social shenanigans and fun, this mid-century beauty on the lake will be the talk of friends and family for years to come!.',
       price: 150.00,
       wifi: true,
       pet_friendly: true,
@@ -55,7 +55,7 @@ require "open-uri"
       amenities: 'Kitchen, Parking, TV',
       latitude: 45.12345,
       longitude: -93.12345,
-      address: '123 Country Lane',
+      address: 'Malibu, California',
       host: user1
     )
     # listing1.cover_photo.attach(io: URI.open("https://stayhubnb-seeds.s3.amazonaws.com/cover.jpg"), filename: "cover.png")
@@ -68,8 +68,8 @@ require "open-uri"
     ])
 
     listing2 = Listing.create!(
-      title: 'Modern Apartment',
-      description: 'A city apratment with the perfect view.',
+      title: 'Stylish-Modern apartment in the heart of NYC',
+      description: 'Beautiful space in a modern building with fantastic views. Very clean and up-to-date. The building is near Hudson Yards, Javits Center, Time Square. From the windows of our apartment you can see Hudson River, Statue of Liberty, and Empire State Building.',
       price: 200.00,
       wifi: true,
       pet_friendly: false,
@@ -78,7 +78,7 @@ require "open-uri"
       amenities: 'Rooftop access, Pool, Gym',
       latitude: 40.7128,
       longitude: -74.0060,
-      address: '456 City Street',
+      address: 'New York, United States',
       host: user2
     )
 
@@ -91,8 +91,10 @@ require "open-uri"
     ])
 
     listing3 = Listing.create!(
-      title: 'Beach House',
-      description: 'Beeatiful beach view.',
+      title: 'Simplicity Off The Grid',
+      description: 'Bring the whole family to this spacious, bright and comfortable home with lots of room for fun, a beautiful new pool, and plenty of deck views. Direct waterfront in the heart of the prestigious Sea Point. 
+      * 25 years old or older to sign agreement
+      * No bachelor/bachelorette parties, Senior Week or After prom parties.',
       price: 300.00,
       wifi: true,
       pet_friendly: true,
@@ -101,7 +103,7 @@ require "open-uri"
       amenities: 'Beach Access, Pool, Kitchen',
       latitude: 34.0194,
       longitude: -118.4912,
-      address: '789 Ocean Drive',
+      address: 'Cook Island, Florida',
       host: user3
     )
     listing3.photos.attach([
@@ -113,8 +115,8 @@ require "open-uri"
     ])
 
     listing4 = Listing.create!(
-      title: 'Cozy Cabin',
-      description: 'Old school cabin in the mountain.',
+      title: 'Lake Glenwood A-Frame w/stunning views',
+      description: 'Welcome to the Enchanted A Frame, where every detail is hand crafted for your memorable trip to the Poconos.  Perfect for a romantic getaway, couple with 1 to 2 children, or individual escape for creativity.  When you are ready, you can hit the areas hiking trails or rally out to the slopes.',
       price: 120.00,
       wifi: false,
       pet_friendly: true,
@@ -123,7 +125,7 @@ require "open-uri"
       amenities: 'Fireplace, Hiking Trails',
       latitude: 39.7392,
       longitude: -104.9903,
-      address: '101 Mountain Trail',
+      address: 'Sussex, New Jersey',
       host: user1
     )
     listing4.photos.attach([
@@ -135,8 +137,10 @@ require "open-uri"
     ])
 
     listing5 = Listing.create!(
-      title: 'Luxury Villa',
-      description: 'A luxurious villa with all the amenities.',
+      title: 'The Woodstock Barn House',
+      description: 'PALuxuryRentals Presents "The Hawkview Retreat", 11 BR, Theater, Arcade, Swimming Pool, Hot Tubs, Mountain Views, Private Balconies - as Seen on TV.
+
+      The perfect spot for your luxurious vacation with plenty of space to spread out across the estates’s 11 Bedrooms, Theater, Arcade, Gameroom and Estate. Spend your days gazing at the mountains, hawk-watching, relaxing in the heated pool, or hanging out in.',
       price: 500.00,
       wifi: true,
       pet_friendly: true,
@@ -145,7 +149,7 @@ require "open-uri"
       amenities: 'Pool, Spa, Private Chef',
       latitude: 36.1699,
       longitude: -115.1398,
-      address: '102 Luxury Lane',
+      address: 'Woodstock, New York',
       host: user2
     )
     listing5.photos.attach([
@@ -157,8 +161,10 @@ require "open-uri"
     ])
 
     listing6 = Listing.create!(
-      title: 'Treehouse',
-      description: 'A nice cozy treehouse',
+      title: 'Creekside Outdoor Adventure Paradise',
+      description: 'Beautifully refinished Silo house on pristine Litchfield Hills estate!  The house features antique furnishings and great artwork throughout!
+
+      Guests have access to the entire 170+ acre property which features a covered bridge, beautifully manicured landscape and breathtaking views. In the warmer months guests can enjoy swimming and kayaking in our private pond.',
       price: 220.00,
       wifi: false,
       pet_friendly: false,
@@ -167,7 +173,7 @@ require "open-uri"
       amenities: 'Bathroom lower level',
       latitude: 41.8781,
       longitude: -87.6298,
-      address: '103 Hululu Blvd',
+      address: 'Old Fort, North Carolina',
       host: user3
     )
     listing6.photos.attach([
@@ -179,8 +185,10 @@ require "open-uri"
     ])
 
     listing7 = Listing.create!(
-      title: 'Penthouse Suite',
-      description: 'A luxurious penthouse with stunning city views.',
+      title: 'Beautiful Penthouse Suite with skyline views!',
+      description: 'Enjoy a stylish experience at this centrally-located place!
+      Penthouse Suite provides amazing skyline views of the Manhattan Bridge. Located in central DUMBO, this spectacular space is a perfect addition to any NYC getaway!
+      ***please note that the neighbouring property has an event space, so occasional events are possible ***',
       price: 600.00,
       wifi: true,
       pet_friendly: false,
@@ -189,7 +197,7 @@ require "open-uri"
       amenities: 'Private Elevator, Rooftop Pool, Concierge Service',
       latitude: 34.0522,
       longitude: -118.2437,
-      address: '104 Sky High Ave',
+      address: 'Brooklyn, New York',
       host: user1
     )
     listing7.photos.attach([
@@ -201,8 +209,8 @@ require "open-uri"
     ])
 
     listing8 = Listing.create!(
-      title: 'Country Cottage',
-      description: 'A charming cottage in the countryside.',
+      title: 'Lost Ridge - Luxury Tiny House w/ Stunning Views!',
+      description: 'Enter the main level from the parking area up just 4 steps to a large deck. The front door opens into the spacious great room which features a wood burning fireplace between 14-foot tall windows allowing all the natural light and open, airy feeling you could ever want. The floor to ceiling windows make you feel that you are truly a part of the surrounding landscape while offering stunning, unobstructed mountain views. ',
       price: 180.00,
       wifi: false,
       pet_friendly: true,
@@ -211,7 +219,7 @@ require "open-uri"
       amenities: 'Garden, Fireplace, Parking',
       latitude: 51.5074,
       longitude: -0.1278,
-      address: '105 Rural Road',
+      address: 'Lenoir, North Carolina',
       host: user2
     )
     listing8.photos.attach([
