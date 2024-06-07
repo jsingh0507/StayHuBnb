@@ -23,6 +23,13 @@ const ListingShow = () => {
   const [endDate, setEndDate] = useState(null);
   const [guest, setGuest] = useState(1);
 
+  // Dummy reviews data
+  const dummyReviews = [
+    { id: 1, author: { name: 'John Doe', avatar: 'https://icons.iconarchive.com/icons/martz90/circle/256/pictures-icon.png' }, text: 'Great place to stay!' },
+    { id: 2, author: { name: 'Jane Smith', avatar: 'https://icons.iconarchive.com/icons/blackvariant/button-ui-requests-12/256/Photos-icon.png' }, text: 'Amazing experience, highly recommended!' },
+    { id: 3, author: { name: 'Alice Johnson', avatar: 'https://icons.iconarchive.com/icons/designbolts/free-multimedia/256/Photo-icon.png' }, text: 'Very clean and comfortable.' }
+  ];
+
   // const amenities = listing.amenities.split(',');
 
   useEffect(() => {
@@ -52,6 +59,7 @@ const ListingShow = () => {
       user_id: currentUser.id,
     };
 
+    // debugger
     dispatch(createReservation(reservation));
     navigate('/reservations');  // Redirect to reservations page
   };
@@ -179,7 +187,7 @@ const ListingShow = () => {
 
       <div className="reviews">
         <h2>Reviews</h2>
-        {/* {listing.reviews.map(review => (
+        {dummyReviews.map(review => (
           <div className="review" key={review.id}>
             <img src={review.author.avatar} alt={review.author.name} className="review-avatar" />
             <div className="review-content">
@@ -187,7 +195,7 @@ const ListingShow = () => {
               <p className="review-text">{review.text}</p>
             </div>
           </div>
-        ))} */}
+        ))}
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 // import SignupForm from './components/session/SignupForm';
 import SessionModal from './components/SessionModal/SessionModal';
 import Navigation from './components/Navigation/Navigation';
+import Footer from './components/Footer/Footer';
 import ListingsIndex from './components/ListingsIndex/ListingsIndex';
 import ListingShow from './components/ListingShow/ListingShow';
 import ReservationIndex from './components/ReservationIndex/ReservationIndex';
@@ -27,6 +28,7 @@ function Layout() {
       <Navigation />
       {isLoaded && <Outlet />}
       <SessionModal />
+      <Footer />
     </>
   );
 }

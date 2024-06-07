@@ -47,6 +47,7 @@ const ReservationIndex = () => {
         </thead>
         <tbody>
           {reservations.map(reservation => (
+            new Date(reservation.createdAt).toString() !== "Invalid Date" &&
             <tr key={reservation.id}>
               <td>{(reservation.startDate)}</td>
               <td>{reservation.endDate}</td>

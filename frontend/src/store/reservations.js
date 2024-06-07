@@ -4,10 +4,13 @@ const RECEIVE_RESERVATIONS = "reservations/RECEIVE_RESERVATIONS";
 const RECEIVE_RESERVATION = "reservations/RECEIVE_RESERVATION";
 const REMOVE_RESERVATION = "reservations/REMOVE_RESERVATION";
 
-const receiveReservations = (reservations) => ({
-  type: RECEIVE_RESERVATIONS,
-  reservations
-});
+const receiveReservations = (reservations) => {
+  // debugger
+  return {
+    type: RECEIVE_RESERVATIONS,
+    reservations
+  }
+};
 
 const receiveReservation = (reservation) => ({
   type: RECEIVE_RESERVATION,
@@ -33,7 +36,7 @@ export const selectReservationsArray = (state) => {
 
 export const fetchReservations = () => async (dispatch) => {
   const res = await csrfFetch("/api/reservations");
-
+  // debugger
   if(res.ok){
     const data = await res.json();
     dispatch(receiveReservations(data));
@@ -58,7 +61,7 @@ export const createReservation = (reservation) => async (dispatch) => {
       'Content-Type': 'application/json'
     }
   });
-
+  // debugger
   if(res.ok){
     const data = await res.json();
     dispatch(receiveReservation(data));

@@ -304,7 +304,7 @@ h3 {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%; /* Ensures button takes full width */
+    width: 100%; 
 }
 
 .reserve-button:hover {
@@ -313,7 +313,39 @@ h3 {
 
 /* Reviews */
 .reviews {
-    margin-top: 20px;
+    margin-top: 0;
+    margin-left: 40px;
+}
+
+.reviews h2 {
+    color: #484848; 
+  }
+  
+.review {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+  
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+  
+.review-content {
+    flex: 1;
+}
+  
+.review-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+  
+.review-text {
+    margin: 0;
+    color: #484848;
 }
 
 /* Responsive design */
