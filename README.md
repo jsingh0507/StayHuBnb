@@ -26,7 +26,7 @@ StayHuBnB currently provides users with the ability to:
 
 In StayHuBnb is it neccessary to keep track of the reservations made, for that reason user authentication is implement with the functionality to sign up or log in:
 
-![gif of profiles](app/assets/images/login.gif)
+![gif of User Auth](app/assets/images/userAuth.gif)
 
 ```
   return (
@@ -111,7 +111,7 @@ return (
 
 The user interface is simplified so that log in and sign up can be easy to access through a modal:
 
-![gif of managing profiles](app/assets/images/manage_profiles.gif)
+![gif of Modal](app/assets/images/userModal.gif)
 
 ```
     return (
@@ -144,7 +144,7 @@ The user interface is simplified so that log in and sign up can be easy to acces
 
 A user is welcomed by the homepage, which lists all the available listings. Whether logged in or not, the user can freely browse through all the listings:
 
-![gif of browse play](app/assets/images/browse_play.gif)
+![gif of browse listing](app/assets/images/listingIndex.gif)
 
 ```
 return (
@@ -179,7 +179,7 @@ return (
 
 After clicking on a specific listing, the user is directed to its show page, where they can see all the detailed information about the listing and have the option to make a booking:
 
-![gif of browse page](app/assets/images/browse_page.gif)
+![gif of browse listing show page](app/assets/images/listingShow.gif)
 
 ```
 return (
@@ -300,9 +300,9 @@ return (
 
 ## Reservation (CRUD)
 
-In StayHuBnB, a logged-in user can make a reservation on the desired listing and is then directed to the reservations index page, where all their reservations are shown. ONce the user is at the index page, a table will be shown with all the reservations details and will have options to edit or delete a reservation:
+In StayHuBnB, a logged-in user can make a reservation on the desired listing and is then directed to the reservations index page, where all their reservations are shown. Once the user is at the index page, a table will be shown with all the reservations details and will have options to edit or delete a reservation:
 
-![gif of mylist](app/assets/images/my_list.gif)
+![gif of reservation page](app/assets/images/reservationIndex.gif)
 
 ```
   return (
@@ -346,7 +346,7 @@ In StayHuBnB, a logged-in user can make a reservation on the desired listing and
 
 The Edit page to update a reservation:
 
-![gif of mylist](app/assets/images/my_list.gif)
+![gif of reservation edit](app/assets/images/reservationEdit.gif)
 
 ```
 return (
