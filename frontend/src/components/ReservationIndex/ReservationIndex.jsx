@@ -19,26 +19,50 @@ const ReservationIndex = () => {
 
   const handleDelete = (reservationId) => {
     console.log('Deleting reservation with ID:', reservationId);
-    // debugger
     dispatch(deleteReservation(reservationId));
+  };
+
+  const calculateTotalPrice = (startDate, endDate, price) => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const days = (end - start) / (1000 * 60 * 60 * 24);
+    return days * price;
   };
 
   return (
     <div className="reservation-index">
       <h1>Your Reservations</h1>
-      <ul>
-        {reservations.map(reservation => (
-          <li key={reservation.id}>
-            <p>Reservation ID: {reservation.id}</p>
-            <p>Start Date: {reservation.startDate}</p>
-            <p>End Date: {reservation.endDate}</p>
-            <p>Guests: {reservation.guest}</p>
-            <p>Price per Night: ${reservation.price}</p>
-            <button onClick={() => handleDelete(reservation.id)}>Delete</button>
-            <Link to={`/reservations/${reservation.id}/edit`}><button>Edit</button></Link>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Check-in</th>
+            <th>Check-out</th>
+            <th>Booked</th>
+            <th>Listing ID</th>
+            <th>Listing Title</th>
+            <th>Guests</th>
+            <th>Total Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {reservations.map(reservation => (
+            <tr key={reservation.id}>
+              <td>{(reservation.startDate)}</td>
+              <td>{reservation.endDate}</td>
+              <td>{new Date(reservation.createdAt).toLocaleDateString()}</td>
+              <td>{reservation.listingId}</td>
+              <td>{reservation.title}</td>
+              <td>{reservation.guest}</td>
+              <td>${calculateTotalPrice(reservation.startDate, reservation.endDate, reservation.price).toFixed(2)}</td>
+              <td>
+                <button className="delete-button" onClick={() => handleDelete(reservation.id)}>Delete</button>
+                <Link to={`/reservations/${reservation.id}/edit`}><button className="edit-button">Edit</button></Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

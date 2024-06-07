@@ -1,33 +1,74 @@
 .reservation-index {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .reservation-index h1 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .reservation-index ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .reservation-index li {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    padding: 10px;
-  }
-  
-  .reservation-index li p {
-    margin: 0;
-  }
-  
-  .reservation-index li p:first-child {
-    font-weight: bold;
-  }
-  
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-index h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.reservation-index table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.reservation-index th, .reservation-index td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 1em;
+}
+
+.reservation-index th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.reservation-index tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.reservation-index tr:hover {
+  background-color: #f1f1f1;
+}
+
+.reservation-index button {
+  margin-right: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.delete-button {
+  background-color: #e14a4f;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+.edit-button {
+  background-color: #e14a4f;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #c0392b;
+}
+
+.reservation-index a button {
+  margin-right: 0;
+}

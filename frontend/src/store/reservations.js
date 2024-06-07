@@ -1,5 +1,4 @@
 import csrfFetch from './csrf';
-import {createSelector} from 'reselect';
 
 const RECEIVE_RESERVATIONS = "reservations/RECEIVE_RESERVATIONS";
 const RECEIVE_RESERVATION = "reservations/RECEIVE_RESERVATION";
@@ -32,15 +31,6 @@ export const selectReservationsArray = (state) => {
   return Object.values(state.reservations) || []
 }
 
-// export const selectReservationsArray = createSelector(
-//   state => state.reservations, 
-//   state => Object.values(state.reservations) ?? []
-// )
-
-// export const selectReservationsArray = createSelector(
-//   state => state.reservations, 
-//   reservations => Object.values(reservations ?? {})
-// )
 export const fetchReservations = () => async (dispatch) => {
   const res = await csrfFetch("/api/reservations");
 

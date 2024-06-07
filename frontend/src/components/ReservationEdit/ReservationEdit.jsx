@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchReservation, updateReservation } from '../../store/reservations';
 import { selectReservation } from '../../store/reservations';
+import './ReservationEdit.css';
 
 const ReservationEdit = () => {
   const { reservationId } = useParams();
@@ -43,34 +44,37 @@ const ReservationEdit = () => {
   }
 
   return (
-    <div>
+    <div className="reservation-edit-container">
       <h1>Edit Reservation</h1>
-      <label>
-        Check-in:
+      <div className="form-group">
+        <label htmlFor="startDate">Check-in</label>
         <input
           type="date"
+          id="startDate"
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
         />
-      </label>
-      <label>
-        Check-out:
+      </div>
+      <div className="form-group">
+        <label htmlFor="endDate">Check-out</label>
         <input
           type="date"
+          id="endDate"
           value={endDate}
           onChange={(e) => setEndDate(e.target.value)}
         />
-      </label>
-      <label>
-        Guests:
+      </div>
+      <div className="form-group">
+        <label htmlFor="guest">Guests</label>
         <input
           type="number"
+          id="guest"
           value={guest}
           min="1"
           onChange={(e) => setGuest(parseInt(e.target.value, 10))}
         />
-      </label>
-      <button onClick={handleUpdate}>Update</button>
+      </div>
+      <button className="update-button" onClick={handleUpdate}>Update</button>
     </div>
   );
 };

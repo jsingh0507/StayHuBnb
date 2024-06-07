@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { FaUserCircle } from 'react-icons/fa';
 import { GiHamburgerMenu } from "react-icons/gi";
 import * as sessionActions from '../../store/session';
+import { Link } from 'react-router-dom';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ function ProfileButton({ user }) {
         <div className="profile-dropdown" ref={dropdownRef}>
           <p>{user.fullName}</p>
           <p>{user.email}</p>
+          <Link to="/reservations"><button>View Reservations</button></Link>
           <button onClick={logout}>Log Out</button>
         </div>
       )}

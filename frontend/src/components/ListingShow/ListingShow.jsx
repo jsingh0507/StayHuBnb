@@ -113,7 +113,7 @@ const ListingShow = () => {
 
         <div className='split right'>
           <div className="pricing-reservation">
-            <div className="pricing">${calculateTotalPrice()/1} night</div>
+            <div className="pricing">${listing.price/1} night</div>
             <form className="reservation-form" onSubmit={handleReserve}>
               <div className='res-grid'>
               <div className='lbl-box'>
