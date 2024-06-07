@@ -1,6 +1,6 @@
 # WELCOME TO STAYHUBNB
 
-Check out the [Live Site](https://webflix-clone.herokuapp.com/#/)!
+Check out the [Live Site](https://stayhubnb.onrender.com/)!
 
 ### Introduction
 
