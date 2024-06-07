@@ -195,12 +195,19 @@ h3 {
     color: #484848;
 }
 
+
+/* Amenities */
 .amenities {
-    display: flex;
-    flex-wrap: wrap;
     margin-top: 20px;
 }
-
+  
+.amenities-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+  
 .amenity {
     display: flex;
     align-items: center;
@@ -209,10 +216,24 @@ h3 {
     font-size: 1em;
     color: #484848;
 }
-
+  
 .amenity i {
     font-size: 1.2em;
     margin-right: 5px;
+}
+  
+.amenity-name {
+    margin-left: 5px;
+}
+  
+.amenities-list li::before {
+    content: "•";
+    color: #ff5a5f;
+    margin-right: 5px;
+}
+
+.amenity-text {
+    margin-left: 5px; 
 }
 
 /* Pricing and booking */

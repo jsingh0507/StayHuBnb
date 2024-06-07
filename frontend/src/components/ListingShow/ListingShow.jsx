@@ -6,6 +6,11 @@ import { useParams, useNavigate} from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
 import './ListingShow.css';
+import { FaWifi } from "react-icons/fa";
+import { MdOutlinePool } from "react-icons/md";
+import { IoSnow, IoCarOutline } from "react-icons/io5";
+import { TbToolsKitchen2 } from "react-icons/tb";
+import { PiBathtub } from "react-icons/pi";
 
 const ListingShow = () => {
   const { listingId } = useParams();
@@ -17,6 +22,8 @@ const ListingShow = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [guest, setGuest] = useState(1);
+
+  // const amenities = listing.amenities.split(',');
 
   useEffect(() => {
     dispatch(fetchListing(listingId));
@@ -101,8 +108,13 @@ const ListingShow = () => {
             <div className="amenities">
               {listing.amenities.split(',').map((amenity, index) => (
                 <div className="amenity" key={index}>
-                  <i className="icon"></i>
-                  <span>{amenity}</span>
+                  {amenity == 'WiFi' ? <><FaWifi /><span className="amenity-text">WiFi</span></> : null}
+                  {amenity == 'Pool' ? <><MdOutlinePool/> <span className="amenity-text">Pool</span></> : null}
+                  {amenity == 'Air Conditioning' ? <><IoSnow/> <span className="amenity-text">A/C</span></> : null}
+                  {amenity == 'Parking' ? <><IoCarOutline/> <span className="amenity-text">Parking</span></> : null}
+                  {amenity == 'Kitchen' ? <><TbToolsKitchen2/><span className="amenity-text">Kitchen</span></> : null}
+                  {amenity == 'Bathub' ? <><PiBathtub/> <span className="amenity-text">Bathtub</span></> : null}
+                  
                 </div>
               ))}
             </div>
