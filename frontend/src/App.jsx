@@ -11,6 +11,7 @@ import ListingShow from './components/ListingShow/ListingShow';
 import ReservationIndex from './components/ReservationIndex/ReservationIndex';
 import ReservationEdit from './components/ReservationEdit/ReservationEdit';
 import * as sessionActions from './store/session';
+import { ProtectedRoute } from './components/Routes/Routes';
 
 
 function Layout() {
@@ -43,15 +44,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/:listingId",
-        element: <ListingShow />
+        element: <ListingShow/>
       },
       {
         path: '/reservations',
-        element: <ReservationIndex />
+        element: <ProtectedRoute component={ReservationIndex} />
       },
       {
         path: '/reservations/:reservationId/edit',
-        element: <ReservationEdit />
+        element: <ProtectedRoute component={ReservationEdit} />
       }
     ]
   }
