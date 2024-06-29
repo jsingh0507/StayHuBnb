@@ -27,8 +27,10 @@ function Layout() {
   return (
     <>
       <Navigation />
-      {isLoaded && <Outlet />}
-      <SessionModal />
+      <div className='content'>
+        {isLoaded && <Outlet />}
+        <SessionModal />
+      </div>
       <Footer />
     </>
   );

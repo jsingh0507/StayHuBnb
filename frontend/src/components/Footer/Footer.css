@@ -1,36 +1,53 @@
+/* Ensure the root element and body take up the full height */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* The main container should be a flexbox container */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* The main content should flex to take up the remaining space */
+.content {
+  flex: 1;
+}
+
 .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f5f5f5;
-    color: #666;
-    font-size: 14px;
-    border-top: 1px solid #ddd;
-  }
-  
-  .footer-left {
-    display: flex;
-    align-items: center;
-  }
-  
-  .footer-left span {
-    margin-right: 5px;
-  }
-  
-  .footer-left a {
-    color: #666;
-    text-decoration: none;
-    margin-right: 5px;
-  }
-  
-  .footer-left a:hover {
-    text-decoration: underline;
-  }
-  
-  .footer-right .github-icon {
-    color: black;
-    width: 26px;
-    height: 26px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  color: #666;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+.footer-left span {
+  margin-right: 5px;
+}
+
+.footer-left a {
+  color: #666;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.footer-left a:hover {
+  text-decoration: underline;
+}
+
+.footer-right .github-icon {
+  color: black;
+  width: 26px;
+  height: 26px;
+}
