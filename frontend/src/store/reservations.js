@@ -65,6 +65,7 @@ export const createReservation = (reservation) => async (dispatch) => {
   if(res.ok){
     const data = await res.json();
     dispatch(receiveReservation(data));
+    dispatch(fetchReservations());
   }
   
 };
@@ -98,13 +99,15 @@ export const deleteReservation = (reservationId) => async (dispatch) => {
 };
 
 const reservationsReducer = (state = {}, action) => {
+  Object.freeze(state);
   const newState = { ...state };
   switch(action.type) {
     case RECEIVE_RESERVATIONS:
       // debugger
-      return { ...state, ...action.reservations };
+      // return { ...state, ...action.reservations };
+      return action.reservations
     case RECEIVE_RESERVATION:
-      return { ...state, [action.reservation.id]: action.reservation };
+      return { ...newState, [action.reservation.id]: action.reservation };
     case REMOVE_RESERVATION:
       // debugger
       delete newState[action.reservationId];
