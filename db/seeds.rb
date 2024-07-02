@@ -256,6 +256,23 @@ require "open-uri"
       guest: 4
     )
 
+    reservation4 = Reservation.create!(
+      listing: listing4,
+      user: user1,
+      start_date: Date.today + 5.days,
+      end_date: Date.today + 8.days,
+      guest: 1
+    )
+
+    reservation5 = Reservation.create!(
+      listing: listing5,
+      user: user1,
+      start_date: Date.today + 5.days,
+      end_date: Date.today + 8.days,
+      guest: 6
+    )
+
+
   puts "Done!"
 
 # end
