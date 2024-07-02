@@ -1,13 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchReservations, selectReservationsArray, deleteReservation } from '../../store/reservations';
 import { Link } from 'react-router-dom';
+import Modal from '../Modal/Modal';
+import DeleteModal from '../DeleteModal/DeleteModal';
 import './ReservationIndex.css';
 
 const ReservationIndex = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.session.user);
   const reservations = useSelector(selectReservationsArray);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [reservationToDelete, setReservationToDelete] = useState(null);
 
   useEffect(() => {
     dispatch(fetchReservations(currentUser.id));
@@ -18,8 +22,23 @@ const ReservationIndex = () => {
   }
 
   const handleDelete = (reservationId) => {
-    console.log('Deleting reservation with ID:', reservationId);
-    dispatch(deleteReservation(reservationId));
+    // console.log('Deleting reservation with ID:', reservationId);
+    // dispatch(deleteReservation(reservationId));
+    setReservationToDelete(reservationId);
+    setShowDeleteModal(true);
+  };
+
+  const confirmDelete = () => {
+    if (reservationToDelete) {
+      dispatch(deleteReservation(reservationToDelete));
+      setShowDeleteModal(false);
+      setReservationToDelete(null);
+    }
+  };
+
+  const cancelDelete = () => {
+    setShowDeleteModal(false);
+    setReservationToDelete(null);
   };
 
   const calculateTotalPrice = (startDate, endDate, price) => {
@@ -64,6 +83,14 @@ const ReservationIndex = () => {
           ))}
         </tbody>
       </table>
+      {showDeleteModal && (
+        <Modal onClose={cancelDelete}>
+          <DeleteModal
+            onConfirm={confirmDelete}
+            onCancel={cancelDelete}
+          />
+        </Modal>
+      )}
     </div>
   );
 };
